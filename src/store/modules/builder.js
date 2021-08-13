@@ -143,19 +143,19 @@ const actions = {
     },
     selectBasements(context, basement) {
         context.commit('selectBasements', basement);
-        router.push('/basements-options');
+        router.push('/seasonal-options');
     },
     selectPackaged(context, basement) {
         context.commit('selectPackaged', basement);
-        router.push('/packaged-options');
+        router.push('/basements-options');
     },
     selectPlumbing(context, basement) {
         context.commit('selectPlumbing', basement);
-        router.push('/plumbing-options');
+        router.push('/lot');
     },
     selectSeasonal(context, basement) {
         context.commit('selectSeasonal', basement);
-        router.push('/seasonal-options');
+        router.push('/plumbing-options');
     }
 }
 
