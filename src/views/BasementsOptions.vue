@@ -20,7 +20,7 @@
           <div class="col-w-2">{{data.basement_name}}</div>
           <div class="col-w-5">{{data.basement_description}}</div>
           <div class="col-w-2">${{data.seasonal_price}}</div>
-          <div class="col-w-3"><button class="btn">Add to home</button></div>
+          <div class="col-w-3" @click="selectBasements(data)"><button class="btn">Add to home</button></div>
         </div>
       </div>      
     </div>
@@ -36,13 +36,12 @@ export default {
       dataLoading: state => state.builder.dataLoading,
       dataList: state => state.builder.basements,      
     }),
-    
   },
   async mounted() {
     await this.getBasements();
   },
   methods: {
-    ...mapActions(['getBasements'])
+    ...mapActions(['getBasements', 'selectBasements'])
   }
 }
 </script>

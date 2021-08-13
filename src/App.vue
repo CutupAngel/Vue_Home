@@ -15,19 +15,19 @@
       </div>
       <div class="main-nav">
         <router-link to="/community">
-          <div class="title">
+          <!-- <div class="title"> -->
             <IconSquareChecked v-if="selectedSections.community" />
             <IconSquare v-if="selectedSections.community === false" />
             Community
-          </div>
+          <!-- </div> -->
           <div class="selected-details" v-if="selectedSections.community">{{ selectedSections.community.name }}</div>
         </router-link>
         <router-link to="/model" v-if="selectedSections.community">
-          <div class="title">
+          <!-- <div class="title"> -->
             <IconSquareChecked v-if="selectedSections.model" />
             <IconSquare v-if="selectedSections.model === false" />
             Model
-          </div>
+          <!-- </div> -->
           <div class="selected-details" v-if="selectedSections.model" v-html="selectedSections.model.title"></div>
         </router-link>
         <a href="javascript:;" class="disabled" v-if="selectedSections.community === false" >
@@ -61,23 +61,23 @@
           Interior Colour
         </a>
         <router-link to="/packaged-options" v-if="selectedSections.model">
-          <IconSquareChecked v-if="selectedSections.additionalOptions.length > 0" />
-          <IconSquare v-if="selectedSections.additionalOptions.length === 0" />
+          <IconSquareChecked v-if="selectedSections.packaged" />
+          <IconSquare v-if="selectedSections.packaged === false" />
           Packaged Options
         </router-link>
         <router-link to="/basements-options" v-if="selectedSections.model">
-          <IconSquareChecked v-if="selectedSections.additionalOptions.length > 0" />
-          <IconSquare v-if="selectedSections.additionalOptions.length === 0" />
+          <IconSquareChecked v-if="selectedSections.basements"/>
+          <IconSquare v-if="selectedSections.basements === false" />
           Basement Options
         </router-link>
         <router-link to="/seasonal-options" v-if="selectedSections.model">
-          <IconSquareChecked v-if="selectedSections.additionalOptions.length > 0" />
-          <IconSquare v-if="selectedSections.additionalOptions.length === 0" />
+          <IconSquareChecked v-if="selectedSections.seasonal" />
+          <IconSquare v-if="selectedSections.seasonal === false" />
           Seasonal Options
         </router-link>
         <router-link to="/plumbing-options" v-if="selectedSections.model">
-          <IconSquareChecked v-if="selectedSections.additionalOptions.length > 0" />
-          <IconSquare v-if="selectedSections.additionalOptions.length === 0" />
+          <IconSquareChecked v-if="selectedSections.plumbing" />
+          <IconSquare v-if="selectedSections.plumbing === false" />
           Plumbing Options
         </router-link>
         <router-link to="/lot" v-if="selectedSections.elevation && selectedSections.interiorColour">

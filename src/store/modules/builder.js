@@ -35,7 +35,11 @@ const state = {
         additionalOptions: [],
         elevation: false,
         interiorColour: false,
-        lot: false
+        lot: false,
+        basements: false,
+        plumbing: false,
+        packaged: false,
+        seasonal: false,
     }
 };
 
@@ -137,6 +141,22 @@ const actions = {
         context.commit('selectInteriorColour', interiorColour);
         router.push('/packaged-options');
     },
+    selectBasements(context, basement) {
+        context.commit('selectBasements', basement);
+        router.push('/basements-options');
+    },
+    selectPackaged(context, basement) {
+        context.commit('selectPackaged', basement);
+        router.push('/packaged-options');
+    },
+    selectPlumbing(context, basement) {
+        context.commit('selectPlumbing', basement);
+        router.push('/plumbing-options');
+    },
+    selectSeasonal(context, basement) {
+        context.commit('selectSeasonal', basement);
+        router.push('/seasonal-options');
+    }
 }
 
 const mutations = {
@@ -173,7 +193,11 @@ const mutations = {
             model: false,
             floorplanOptions: [],
             elevation: false,
-            lot: false
+            lot: false,
+            basements: false,
+            plumbing: false,
+            packaged: false,
+            seasonal: false,
         };
     },
     setDataLoading(state, payload) {
@@ -202,6 +226,18 @@ const mutations = {
     selectInteriorColour(state, interiorColour) {
         state.selected.interiorColour = interiorColour;
     },
+    selectBasements(state, basement) {
+        state.selected.basements = basement;
+    },
+    selectPlumbing(state, plumbing) {
+        state.selected.plumbing = plumbing;
+    },
+    selectPackaged(state, packaged) {
+        state.selected.packaged = packaged;
+    },
+    selectSeasonal(state, seasonal) {
+        state.selected.seasonal = seasonal;
+    }
 };
 
 export default {

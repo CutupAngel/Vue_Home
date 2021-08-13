@@ -20,7 +20,7 @@
           <div class="col-w-2">{{data.seasonal_name}}</div>
           <div class="col-w-5">{{data.seasonal_description}}</div>
           <div class="col-w-2">${{data.seasonal_price}}</div>
-          <div class="col-w-3"><button class="btn">Add to home</button></div>
+          <div class="col-w-3" @click="selectSeasonal(data)"><button class="btn">Add to home</button></div>
         </div>
       </div>      
     </div>
@@ -43,7 +43,7 @@ export default {
     await this.getSeasonal();
   },
   methods: {
-    ...mapActions(['getSeasonal'])
+    ...mapActions(['getSeasonal', 'selectSeasonal'])
   }
 }
 </script>

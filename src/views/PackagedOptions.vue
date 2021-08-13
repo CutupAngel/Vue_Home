@@ -21,7 +21,7 @@
           <div class="col-w-4">{{packaged.lifestyle_packages_description}}</div>
           <div class="col-w-4">{{packaged.lifestyle_packages_specifications}}</div>
           <div class="col-w-1">${{packaged.lifestyle_packages_price}}</div>
-          <div class="col-w-2"><button class="btn">Add to home</button></div>
+          <div class="col-w-2" @click="selectPackaged(packaged)"><button class="btn">Add to home</button></div>
         </div>
       </div>      
     </div>
@@ -45,7 +45,7 @@ export default {
     await this.getPackaged();
   },
   methods: {
-    ...mapActions(['getPackaged'])
+    ...mapActions(['getPackaged', 'selectPackaged'])
   }
 }
 </script>
