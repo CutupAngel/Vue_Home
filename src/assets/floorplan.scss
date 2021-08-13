@@ -1,0 +1,93 @@
+.page-floorplan {
+  padding: 40px 20px;
+
+  .elevation-button {
+    display: inline-block;
+    font-size: 14px;
+    background: #5170ef;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 30px;
+  }
+
+  .floorplan-wrapper {
+    display: flex;
+
+    .floorplan-image {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .floorplan-options-wrapper {
+      width: 400px;
+      margin-left: auto;
+    }
+
+    .floorplan-options {
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      background: #fff;
+
+      .accordion {
+        .accordion-toggle {
+          border-radius: 4px;
+          font-size: 20px;
+          font-weight: 500;
+          padding: 4px;
+          margin-bottom: 4px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          svg {
+            margin-left: auto;
+          }
+
+          &:hover, &.active {
+            background: #eeecff;
+
+            svg {
+              color: #4361ee;
+            }
+          }
+        }
+
+        .accordion-sub-toggle {
+          border-radius: 4px;
+          font-size: 18px;
+          font-weight: 400;
+          padding: 4px;
+          margin-left: 8px;
+          margin-bottom: 4px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          svg {
+            margin-left: auto;
+          }
+
+          &:hover, &.active {
+            background: #eeecff;
+
+            svg {
+              color: #4361ee;
+            }
+          }
+        }
+
+        .accordion-items {
+          padding: 12px;
+          font-size: 14px;
+
+          .accordion-item {
+            margin-bottom: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

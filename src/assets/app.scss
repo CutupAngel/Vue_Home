@@ -1,0 +1,23 @@
+$font-family-base: 'Inter', sans-serif;
+$font-weight-base: 400;
+$font-size-base: 13;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/reboot";
+@import "./node_modules/bootstrap/scss/bootstrap-grid";
+@import "./node_modules/bootstrap/scss/bootstrap-utilities";
+@import "./node_modules/bootstrap/scss/forms";
+@import "./node_modules/bootstrap/scss/buttons";
+@import "./node_modules/bootstrap/scss/alert";
+
+@import "main";
+@import "community";
+@import "floorplan";
+@import "home";
+@import "model";
+@import "elevation";
+@import "interior_colours";
+@import "additional_options";
+@import "basement";

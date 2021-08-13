@@ -1,0 +1,58 @@
+[
+    {
+      "lifestyle_packages_name": "Standard Kitchen Package",
+      "lifestyle_packages_description": "Standard Kitchen Package",
+      "lifestyle_packages_specifications": "This option includes long established fact that a reader will be distracted by the readable content of a p",
+      "lifestyle_packages_price": "0",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "OE-RSL-KITPKG",
+      "lifestyle_packages_description": "Luxury Kitchen Package",
+      "lifestyle_packages_specifications": "This option includes a chimney style hood fan, 42” cabinets with crown moulding and an upgraded faucet",
+      "lifestyle_packages_price": "5200",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "SG-EV-PKG",
+      "lifestyle_packages_description": "RSL 4' Garage Lifestyle Package",
+      "lifestyle_packages_specifications": "This option includes a chimney style hood fan, 42” cabinets with crown moulding and an upgraded faucet",
+      "lifestyle_packages_price": "14670",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "SP-EV-RSLPKG",
+      "lifestyle_packages_description": "RSL Lifestyle Package bsmt window from 60x24 to 48x36.  Add some windows to sides, remove zll materials and change overhang from 12\" to 18\"",
+      "lifestyle_packages_specifications": "This option includes a long established fact that a reader ill be distracted by the readable content of a p",
+      "lifestyle_packages_price": "4115",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "BS-EV-RI-PKG",
+      "lifestyle_packages_description": "Basement Rough Ins w/ side entrance",
+      "lifestyle_packages_specifications": "a long established fact that a reader will be distracted by the readable content of a p",
+      "lifestyle_packages_price": "3503",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "RH-BSMT-EV",
+      "lifestyle_packages_description": "U/G std wallmount handrail to basement",
+      "lifestyle_packages_specifications": "a long established fact that a reader will be distracted by the readable content of a p",
+      "lifestyle_packages_price": "342",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "RT-LVL0-EV",
+      "lifestyle_packages_description": "U/G stubwall to spindle railing (std layout)",
+      "lifestyle_packages_specifications": "a long established fact that a reader will be distracted by the readable content of a p",
+      "lifestyle_packages_price": "4370",
+      "lifestyle_packages_image": false
+    },
+    {
+      "lifestyle_packages_name": "RT-LVL0-EV1",
+      "lifestyle_packages_description": "U/G stubwall to spindle railing (Opt layout)",
+      "lifestyle_packages_specifications": "a long established fact that a reader will be distracted by the readable content of a p",
+      "lifestyle_packages_price": "3369",
+      "lifestyle_packages_image": false
+    }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "basement_name": "BD-DOOR-EV",
+    "basement_description": "Add 2'-8\" door to Top of Stairs on Main floor to Basement",
+    "seasonal_price": "170",
+    "basement_image": false
+  },
+  {
+    "basement_name": "BD-FULL1",
+    "basement_description": "Basement Development",
+    "seasonal_price": "30410",
+    "basement_image": false
+  },
+  {
+    "basement_name": "BS-EV-RI-PKG",
+    "basement_description": "Basement Rough Ins w/ side entrance",
+    "seasonal_price": "3503",
+    "basement_image": false
+  },
+  {
+    "basement_name": "BS-SIDENTRNC",
+    "basement_description": "Side Entrance",
+    "seasonal_price": "1718",
+    "basement_image": false
+  },
+  {
+    "basement_name": "BS-SUITE",
+    "basement_description": "Basement Suite",
+    "seasonal_price": "68247",
+    "basement_image": false
+  }
+]

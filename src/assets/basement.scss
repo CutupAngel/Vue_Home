@@ -1,0 +1,48 @@
+.title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.subTitle {
+  font-size: 20px;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(189, 193, 197);
+  border-bottom: 10px solid black;
+  padding: 10px 0;
+}
+.row-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.row-font {
+  font-size: 18px;
+}
+.row-space {
+  margin: 5px 0;
+  padding: 5px;
+}
+.col-w-1 {
+  width: 100px;
+}
+.col-w-2 {
+  width: 200px;
+}
+.col-w-3 {
+  width: 300px;
+}
+.col-w-4 {
+  width: 400px;
+}
+.col-w-5 {
+  width: 500px;
+}
+.btn {
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+}
