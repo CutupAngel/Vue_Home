@@ -145,9 +145,9 @@ const actions = {
         context.commit('selectBasements', basement);
         router.push('/seasonal-options');
     },
-    selectPackaged(context, basement) {
-        context.commit('selectPackaged', basement);
-        router.push('/basements-options');
+    selectPackaged(context) {
+        context.commit('selectPackaged', true);
+        // router.push('/basements-options');
     },
     selectPlumbing(context, basement) {
         context.commit('selectPlumbing', basement);
