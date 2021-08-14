@@ -7,11 +7,13 @@
       </a>
       <div class="logo"><img src="./assets/img/logo.png" alt=""></div>
       <div :class="{summary: true, disabled: selectedSections.community === false}">
-        <div class="detail">
-          <small>Starting From</small>
-          <div class="price">$000.000</div>
-        </div>
-        <IconArrowNarrowRight :stroke-width="1.5" :width="40" :height="40" />
+        <!-- <router-link to="/starting"> -->
+          <div class="detail">
+            <small>Starting From</small>
+            <div class="price">$000.000</div>
+          </div>
+          <IconArrowNarrowRight :stroke-width="1.5" :width="40" :height="40" />
+        <!-- </router-link> -->
       </div>
       <div class="main-nav">
         <router-link to="/community">
