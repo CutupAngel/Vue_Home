@@ -1,0 +1,26 @@
+.page-details {
+  padding: 40px 20px;
+  display: flex;
+}
+.con-block {
+    // height: 100%;
+    margin: 10px 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 3px solid rgb(253, 228, 0);
+}
+
+.flex-content{
+    display: flex;
+    justify-content:flex-start;
+}
+.details-title {
+    font-size: 15px;
+    font-weight: 800;
+}
+.details-context {
+    font-size: 20px;
+    font-weight: 200;
+    color: gray;
+    padding-right: 30px;
+}

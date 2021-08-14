@@ -21,7 +21,7 @@
           <div class="col-w-4">{{packaged.lifestyle_packages_description}}</div>
           <div class="col-w-4">{{packaged.lifestyle_packages_specifications}}</div>
           <div class="col-w-1">${{packaged.lifestyle_packages_price}}</div>
-          <div class="col-w-2" @click="selectPackagedOptions(packaged.lifestyle_packages_name)"><button class="btn">Add to home</button></div>
+          <div class="col-w-2" @click="selectPackagedOptions(packaged)"><button class="btn">Add to home</button></div>
         </div>
       </div>      
     </div>

@@ -53,6 +53,10 @@ const routes = [
     path: '/plumbing-options',
     component: () => import(/* webpackChunkName: "PlumbingOptions" */ '../views/PlumbingOptions.vue')
   },
+  { 
+    path: '/starting',
+    component: () => import(/* webpackChunkName: "PlumbingOptions" */ '../views/Starting.vue')
+  },
 ]
 
 const router = new VueRouter({

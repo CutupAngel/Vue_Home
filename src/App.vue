@@ -7,13 +7,13 @@
       </a>
       <div class="logo"><img src="./assets/img/logo.png" alt=""></div>
       <div :class="{summary: true, disabled: selectedSections.community === false}">
-        <!-- <router-link to="/starting"> -->
-          <div class="detail">
-            <small>Starting From</small>
-            <div class="price">$000.000</div>
-          </div>
+        <div class="detail">
+          <small>Starting From</small>
+          <div class="price">${{totalPrice}}</div>
+        </div>
+        <router-link to="/starting">
           <IconArrowNarrowRight :stroke-width="1.5" :width="40" :height="40" />
-        <!-- </router-link> -->
+        </router-link>
       </div>
       <div class="main-nav">
         <router-link to="/community">
@@ -135,7 +135,8 @@ import IconRotate from "./icons/IconRotate";
 export default {
   components: {IconRotate, IconArrowNarrowLeft, IconArrowNarrowRight, IconSquareChecked, IconSquare},
   computed: mapState({
-    selectedSections: state => state.builder.selected
+    selectedSections: state => state.builder.selected,
+    totalPrice: state => state.tPrice
   }),
   methods: {
     ...mapActions(['resetSelection'])

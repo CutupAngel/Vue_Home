@@ -18,9 +18,9 @@
                 <IconChevronDown v-if="accordion === 'main_floor'" :stroke-width="3" />
               </div>
               <div class="accordion-items" v-if="accordion === 'main_floor'">
-                <div class="accordion-item" v-for="option in floorplans.main_floor_options" :key="option.option_description" @click="toggleFloorplanOption(option.option_name)">
-                  <IconSquare v-if="selectedSections.floorplanOptions.indexOf(option.option_name) === -1" />
-                  <IconSquareChecked v-if="selectedSections.floorplanOptions.indexOf(option.option_name) > -1" />
+                <div class="accordion-item" v-for="option in floorplans.main_floor_options" :key="option.option_description" @click="toggleFloorplanOption(option)">
+                  <IconSquare v-if="selectedSections.floorplanOptions.indexOf(option) === -1" />
+                  <IconSquareChecked v-if="selectedSections.floorplanOptions.indexOf(option) > -1" />
                   {{ option.option_description }}
                   (<strong><FormattedPrice :price="option.option_price" /></strong>)
                 </div>
@@ -33,9 +33,9 @@
                 <IconChevronDown v-if="accordion === 'upper_floor'" :stroke-width="3" />
               </div>
               <div class="accordion-items" v-if="accordion === 'upper_floor'">
-                <div class="accordion-item" v-for="option in floorplans.upper_floor_options" :key="option.option_description" @click="toggleFloorplanOption(option.option_name)">
-                  <IconSquare v-if="selectedSections.floorplanOptions.indexOf(option.option_name) === -1" />
-                  <IconSquareChecked v-if="selectedSections.floorplanOptions.indexOf(option.option_name) > -1" />
+                <div class="accordion-item" v-for="option in floorplans.upper_floor_options" :key="option.option_description" @click="toggleFloorplanOption(option)">
+                  <IconSquare v-if="selectedSections.floorplanOptions.indexOf(option) === -1" />
+                  <IconSquareChecked v-if="selectedSections.floorplanOptions.indexOf(option) > -1" />
                   {{ option.option_description }}
                   (<strong><FormattedPrice :price="option.option_price" /></strong>)
                 </div>
@@ -48,9 +48,9 @@
                 <IconChevronDown v-if="accordion === 'lower_floor'" :stroke-width="3" />
               </div>
               <div class="accordion-items" v-if="accordion === 'lower_floor'">
-                <div class="accordion-item" v-for="option in floorplans.lower_floor_options" :key="option.option_description" @click="toggleFloorplanOption(option.option_name)">
-                  <IconSquare v-if="selectedSections.floorplanOptions.indexOf(option.option_name) === -1" />
-                  <IconSquareChecked v-if="selectedSections.floorplanOptions.indexOf(option.option_name) > -1" />
+                <div class="accordion-item" v-for="option in floorplans.lower_floor_options" :key="option.option_description" @click="toggleFloorplanOption(option)">
+                  <IconSquare v-if="selectedSections.floorplanOptions.indexOf(option) === -1" />
+                  <IconSquareChecked v-if="selectedSections.floorplanOptions.indexOf(option) > -1" />
                   {{ option.option_description }}
                   (<strong><FormattedPrice :price="option.option_price" /></strong>)
                 </div>

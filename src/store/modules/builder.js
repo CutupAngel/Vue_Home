@@ -20,6 +20,8 @@ const state = {
     basementOptions:[],
     plumbingOptions:[],
     seasonalOptions:[],
+    totalPrice: [],
+    tPrice: [],
     dataLoading: {
         community: false,
         model: false,
@@ -136,13 +138,16 @@ const actions = {
             context.commit('resetFloorplanOptions');
         }
         context.commit('selectModel', model);
+        context.commit('setTotalPrice', model.starting_from);
         router.push('/floorplan');
     },
     toggleFloorplanOption(context, optionName) {
         context.commit('toggleFloorplanOptions', optionName);
+        context.commit('setTotalPrice', optionName.option_price);
     },
     selectElevation(context, elevation) {
         context.commit('selectElevation', elevation);
+        context.commit('setTotalPrice', elevation.elevation_price);
         router.push('/interior-colour');
     },
     selectInteriorColour(context, interiorColour) {
@@ -170,19 +175,42 @@ const actions = {
     },
     selectPackagedOptions(context, packaged) {
         context.commit('selectPackagedOptions', packaged);
+        context.commit('setTotalPrice', packaged.lifestyle_packages_price);
     },
     selectBasementsOptions(context, basement) {
         context.commit('selectBasementsOptions', basement);
+        context.commit('setTotalPrice', basement.seasonal_price);
     },
     selectPlumbingOptions(context, plumbing) {
         context.commit('selectPlumbingOptions', plumbing);
+        context.commit('setTotalPrice', plumbing.plumbing_price);
     },
     selectSeasonalOptions(context, seasonal) {
         context.commit('selectSeasonalOptions', seasonal);
+        context.commit('setTotalPrice', seasonal.seasonal_price);
+    },
+    setTotalPrice(context, price) {
+        context.commit('setTotalPrice', price);
     }
 }
 
 const mutations = {
+    setTotalPrice(state, price) {
+        let index = state.totalPrice.indexOf(price);
+        console.log(index);
+        console.log(state.totalPrice.length);
+        if (index > -1) {
+            state.totalPrice.splice(index, 1);
+        } else {
+            state.totalPrice.push(price);
+        }
+        let sum = 0;
+        for (let i = 0; i < state.totalPrice.length; i++) {
+            sum += parseInt(state.totalPrice[i]);
+        }
+        console.log(sum);
+        state.tPrice = sum;
+    },
     setCommunities(state, communities) {
         state.communities = communities;
     },
@@ -224,7 +252,9 @@ const mutations = {
             basementOptions: [],
             packagedOptions: [],
             seasonalOptions: [],
-            plumbingOptions: []
+            plumbingOptions: [],
+            totalPrice: [],
+            tPrice: []
         };
     },
     setDataLoading(state, payload) {
