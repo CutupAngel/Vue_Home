@@ -141,21 +141,21 @@ const actions = {
         context.commit('selectInteriorColour', interiorColour);
         router.push('/packaged-options');
     },
-    selectBasements(context, basement) {
-        context.commit('selectBasements', basement);
-        router.push('/seasonal-options');
+    selectBasements(context) {
+        context.commit('selectBasements', true);
+        // router.push('/seasonal-options');
     },
     selectPackaged(context) {
         context.commit('selectPackaged', true);
         // router.push('/basements-options');
     },
-    selectPlumbing(context, basement) {
-        context.commit('selectPlumbing', basement);
-        router.push('/lot');
+    selectPlumbing(context) {
+        context.commit('selectPlumbing', true);
+        // router.push('/lot');
     },
-    selectSeasonal(context, basement) {
-        context.commit('selectSeasonal', basement);
-        router.push('/plumbing-options');
+    selectSeasonal(context) {
+        context.commit('selectSeasonal', true);
+        // router.push('/plumbing-options');
     }
 }
 
