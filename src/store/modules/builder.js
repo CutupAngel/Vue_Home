@@ -16,6 +16,10 @@ const state = {
     basements:[],
     plumbing:[],
     packaged:[],
+    packagedOptions:[],
+    basementOptions:[],
+    plumbingOptions:[],
+    seasonalOptions:[],
     dataLoading: {
         community: false,
         model: false,
@@ -40,6 +44,10 @@ const state = {
         plumbing: false,
         packaged: false,
         seasonal: false,
+        basementOptions: [],
+        packagedOptions: [],
+        plumbingOptions: [],
+        seasonalOptions: [],
     }
 };
 
@@ -156,6 +164,21 @@ const actions = {
     selectSeasonal(context) {
         context.commit('selectSeasonal', true);
         // router.push('/plumbing-options');
+    },
+    selectlots(context) {
+        context.commit('selectlots', true);
+    },
+    selectPackagedOptions(context, packaged) {
+        context.commit('selectPackagedOptions', packaged);
+    },
+    selectBasementsOptions(context, basement) {
+        context.commit('selectBasementsOptions', basement);
+    },
+    selectPlumbingOptions(context, plumbing) {
+        context.commit('selectPlumbingOptions', plumbing);
+    },
+    selectSeasonalOptions(context, seasonal) {
+        context.commit('selectSeasonalOptions', seasonal);
     }
 }
 
@@ -198,6 +221,10 @@ const mutations = {
             plumbing: false,
             packaged: false,
             seasonal: false,
+            basementOptions: [],
+            packagedOptions: [],
+            seasonalOptions: [],
+            plumbingOptions: []
         };
     },
     setDataLoading(state, payload) {
@@ -237,6 +264,42 @@ const mutations = {
     },
     selectSeasonal(state, seasonal) {
         state.selected.seasonal = seasonal;
+    },
+    selectlots(state, lots) {
+        state.selected.lot = lots;
+    },
+    selectPackagedOptions(state, packaged) {
+        console.log(state.selected.packagedOptions.type);
+        let index = state.selected.packagedOptions.indexOf(packaged);
+        if (index > -1) {
+            state.selected.packagedOptions.splice(index, 1);
+        } else {
+            state.selected.packagedOptions.push(packaged);
+        }
+    },
+    selectBasementsOptions(state, basement) {
+        let index = state.selected.basementOptions.indexOf(basement);
+        if (index > -1) {
+            state.selected.basementOptions.splice(index, 1);
+        } else {
+            state.selected.basementOptions.push(basement);
+        }
+    },
+    selectPlumbingOptions(state, plumbing) {
+        let index = state.selected.plumbingOptions.indexOf(plumbing);
+        if (index > -1) {
+            state.selected.plumbingOptions.splice(index, 1);
+        } else {
+            state.selected.plumbingOptions.push(plumbing);
+        }
+    },
+    selectSeasonalOptions(state, seasonal) {
+        let index = state.selected.seasonalOptions.indexOf(seasonal);
+        if (index > -1) {
+            state.selected.seasonalOptions.splice(index, 1);
+        } else {
+            state.selected.seasonalOptions.push(seasonal);
+        }
     }
 };
 

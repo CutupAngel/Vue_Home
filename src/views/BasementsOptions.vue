@@ -20,7 +20,7 @@
           <div class="col-w-2">{{data.basement_name}}</div>
           <div class="col-w-5">{{data.basement_description}}</div>
           <div class="col-w-2">${{data.seasonal_price}}</div>
-          <div class="col-w-3"><button class="btn">Add to home</button></div>
+          <div class="col-w-3" @click="selectBasementsOptions(data.basement_name)"><button class="btn">Add to home</button></div>
         </div>
       </div>      
     </div>
@@ -42,7 +42,7 @@ export default {
     this.selectBasements();
   },
   methods: {
-    ...mapActions(['getBasements', 'selectBasements'])
+    ...mapActions(['getBasements', 'selectBasements', 'selectBasementsOptions'])
   }
 }
 </script>

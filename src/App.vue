@@ -64,6 +64,7 @@
           <IconSquareChecked v-if="selectedSections.packaged" />
           <IconSquare v-if="selectedSections.packaged === false" />
           Packaged Options
+          <div class="selected-details" v-if="selectedSections.packaged">{{selectedSections.packagedOptions.length}} options selected</div>
         </router-link>
         <a href="javascript:;" class="disabled" v-if="selectedSections.floorplanOptions.length > 0 && selectedSections.elevation === false">
           <IconSquare />
@@ -73,6 +74,7 @@
           <IconSquareChecked v-if="selectedSections.basements"/>
           <IconSquare v-if="selectedSections.basements === false" />
           Basement Options
+          <div class="selected-details" v-if="selectedSections.basements">{{selectedSections.basementOptions.length}} options selected</div>
         </router-link>
         <a href="javascript:;" class="disabled" v-if="selectedSections.floorplanOptions.length > 0 && selectedSections.elevation === false">
           <IconSquare />
@@ -82,6 +84,7 @@
           <IconSquareChecked v-if="selectedSections.seasonal" />
           <IconSquare v-if="selectedSections.seasonal === false" />
           Seasonal Options
+          <div class="selected-details" v-if="selectedSections.seasonal">{{selectedSections.seasonalOptions.length}} options selected</div>
         </router-link>
         <a href="javascript:;" class="disabled" v-if="selectedSections.floorplanOptions.length > 0 && selectedSections.elevation === false" >
           <IconSquare />
@@ -91,6 +94,7 @@
           <IconSquareChecked v-if="selectedSections.plumbing" />
           <IconSquare v-if="selectedSections.plumbing === false" />
           Plumbing Options
+          <div class="selected-details" v-if="selectedSections.plumbing">{{selectedSections.plumbingOptions.length}} options selected</div>
         </router-link>
         <a href="javascript:;" class="disabled" v-if="selectedSections.floorplanOptions.length > 0 && selectedSections.elevation === false">
           <IconSquare />

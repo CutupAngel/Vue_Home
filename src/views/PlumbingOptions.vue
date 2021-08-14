@@ -20,7 +20,7 @@
           <div class="col-w-2">{{plum.plumbing_name}}</div>
           <div class="col-w-5">{{plum.plumbing_description}}</div>
           <div class="col-w-2">${{plum.plumbing_price}}</div>
-          <div class="col-w-3"><button class="btn">Add to home</button></div>
+          <div class="col-w-3" @click="selectPlumbingOptions(plum.plumbing_name)"><button class="btn">Add to home</button></div>
         </div>
       </div>      
     </div>
@@ -44,7 +44,7 @@ export default {
     this.selectPlumbing();
   },
   methods: {
-    ...mapActions(['getPlumbing', 'selectPlumbing'])
+    ...mapActions(['getPlumbing', 'selectPlumbing', 'selectPlumbingOptions'])
   }
 }
 </script>
