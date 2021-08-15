@@ -20,9 +20,18 @@
           <div class="col-w-2">{{data.basement_name}}</div>
           <div class="col-w-5">{{data.basement_description}}</div>
           <div class="col-w-2">${{data.seasonal_price}}</div>
-          <div class="col-w-3" @click="selectBasementsOptions(data)"><button class="btn">Add to home</button></div>
+          <div class="col-w-3" style="text-align: center;" @click="selectBasementsOptions(data)">
+            <button class="btn" v-if="selectedSections.basementOptions.indexOf(data) === -1">Add to home</button>
+            <button class="btn" v-else>Added</button>
+          </div>
         </div>
       </div>      
+    </div>
+    <div style="text-align: right" v-if="selectedSections.basementOptions.length > 0">
+      <router-link to="/seasonal-options" class="elevation-button">
+        Continue
+        <IconArrowNarrowRight :stroke-width="1.5" :width="18" :height="18" />
+      </router-link>
     </div>
   </div>
 </template>

@@ -55,6 +55,10 @@ html, body {
       display: flex;
       align-items: center;
 
+      a {
+        color: #fff;
+      }
+
       &:hover, &.active {
         background: #4361ee;
       }

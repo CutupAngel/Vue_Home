@@ -20,8 +20,7 @@ const state = {
     basementOptions:[],
     plumbingOptions:[],
     seasonalOptions:[],
-    totalPrice: [],
-    tPrice: [],
+    totalPrice: {type: Number, default: 0},
     dataLoading: {
         community: false,
         model: false,
@@ -136,18 +135,18 @@ const actions = {
         if (context.state.selected.model !== false && context.state.selected.model.id !== model.id) {
             context.commit('selectElevation', false);
             context.commit('resetFloorplanOptions');
+            context.commit('resetTotalPrice');
         }
         context.commit('selectModel', model);
-        context.commit('setTotalPrice', model.starting_from);
         router.push('/floorplan');
     },
     toggleFloorplanOption(context, optionName) {
         context.commit('toggleFloorplanOptions', optionName);
-        context.commit('setTotalPrice', optionName.option_price);
+        // context.commit('addTotalPrice', optionName.option_price);
     },
     selectElevation(context, elevation) {
         context.commit('selectElevation', elevation);
-        context.commit('setTotalPrice', elevation.elevation_price);
+        // context.commit('addTotalPrice', elevation.elevation_price);
         router.push('/interior-colour');
     },
     selectInteriorColour(context, interiorColour) {
@@ -175,42 +174,19 @@ const actions = {
     },
     selectPackagedOptions(context, packaged) {
         context.commit('selectPackagedOptions', packaged);
-        context.commit('setTotalPrice', packaged.lifestyle_packages_price);
     },
     selectBasementsOptions(context, basement) {
         context.commit('selectBasementsOptions', basement);
-        context.commit('setTotalPrice', basement.seasonal_price);
     },
     selectPlumbingOptions(context, plumbing) {
         context.commit('selectPlumbingOptions', plumbing);
-        context.commit('setTotalPrice', plumbing.plumbing_price);
     },
     selectSeasonalOptions(context, seasonal) {
         context.commit('selectSeasonalOptions', seasonal);
-        context.commit('setTotalPrice', seasonal.seasonal_price);
-    },
-    setTotalPrice(context, price) {
-        context.commit('setTotalPrice', price);
     }
 }
 
 const mutations = {
-    setTotalPrice(state, price) {
-        let index = state.totalPrice.indexOf(price);
-        console.log(index);
-        console.log(state.totalPrice.length);
-        if (index > -1) {
-            state.totalPrice.splice(index, 1);
-        } else {
-            state.totalPrice.push(price);
-        }
-        let sum = 0;
-        for (let i = 0; i < state.totalPrice.length; i++) {
-            sum += parseInt(state.totalPrice[i]);
-        }
-        console.log(sum);
-        state.tPrice = sum;
-    },
     setCommunities(state, communities) {
         state.communities = communities;
     },
@@ -253,9 +229,11 @@ const mutations = {
             packagedOptions: [],
             seasonalOptions: [],
             plumbingOptions: [],
-            totalPrice: [],
-            tPrice: []
         };
+        state.totalPrice = 0;
+    },
+    resetTotalPrice(state) {
+        state.totalPrice = 0;
     },
     setDataLoading(state, payload) {
         state.dataLoading[payload.type] = payload.status;
@@ -265,19 +243,30 @@ const mutations = {
     },
     selectModel(state, model) {
         state.selected.model = model;
+        if (model !== false) {
+            state.totalPrice = parseInt(state.totalPrice) + parseInt(model.starting_from);
+        }
     },
     toggleFloorplanOptions(state, optionName) {
         let index = state.selected.floorplanOptions.indexOf(optionName);
         if (index > -1) {
             state.selected.floorplanOptions.splice(index, 1);
+            state.totalPrice -= parseInt(optionName.option_price);
         } else {
             state.selected.floorplanOptions.push(optionName);
+            state.totalPrice += parseInt(optionName.option_price);
         }
     },
     resetFloorplanOptions(state) {
         state.selected.floorplanOptions = [];
     },
     selectElevation(state, elevation) {
+        console.log(state.selected.elevation);
+        if (state.selected.elevation !== false) {
+            state.totalPrice -= parseInt(state.selected.elevation.elevation_price);
+        }
+        console.log(elevation.elevation_price);
+        state.totalPrice += parseInt(elevation.elevation_price);
         state.selected.elevation = elevation;
     },
     selectInteriorColour(state, interiorColour) {
@@ -303,32 +292,40 @@ const mutations = {
         let index = state.selected.packagedOptions.indexOf(packaged);
         if (index > -1) {
             state.selected.packagedOptions.splice(index, 1);
+            state.totalPrice -= parseInt(packaged.lifestyle_packages_price);
         } else {
             state.selected.packagedOptions.push(packaged);
+            state.totalPrice += parseInt(packaged.lifestyle_packages_price);
         }
     },
     selectBasementsOptions(state, basement) {
         let index = state.selected.basementOptions.indexOf(basement);
         if (index > -1) {
             state.selected.basementOptions.splice(index, 1);
+            state.totalPrice -= parseInt(basement.seasonal_price);
         } else {
             state.selected.basementOptions.push(basement);
+            state.totalPrice += parseInt(basement.seasonal_price);
         }
     },
     selectPlumbingOptions(state, plumbing) {
         let index = state.selected.plumbingOptions.indexOf(plumbing);
         if (index > -1) {
             state.selected.plumbingOptions.splice(index, 1);
+            state.totalPrice -= parseInt(plumbing.plumbing_price);
         } else {
             state.selected.plumbingOptions.push(plumbing);
+            state.totalPrice += parseInt(plumbing.plumbing_price);
         }
     },
     selectSeasonalOptions(state, seasonal) {
         let index = state.selected.seasonalOptions.indexOf(seasonal);
         if (index > -1) {
             state.selected.seasonalOptions.splice(index, 1);
+            state.totalPrice -= parseInt(seasonal.seasonal_price);
         } else {
             state.selected.seasonalOptions.push(seasonal);
+            state.totalPrice += parseInt(seasonal.seasonal_price);
         }
     }
 };

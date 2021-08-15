@@ -102,12 +102,13 @@
           <IconSquare />
           Plumbing Options
         </a>
-        <router-link to="/lot" v-if="selectedSections.elevation && selectedSections.interiorColour">
+        <router-link to="/lot" v-if="selectedSections.elevation "> 
+        <!-- && selectedSections.interiorColour -->
           <IconSquareChecked v-if="selectedSections.lot" />
           <IconSquare v-if="selectedSections.lot === false" />
           Lot
         </router-link>
-        <a href="javascript:;" class="disabled" v-if="selectedSections.interiorColour === false" >
+        <a href="javascript:;" class="disabled" v-if="selectedSections.elevation === false" >
           <IconSquare />
           Lot
         </a>
@@ -136,7 +137,7 @@ export default {
   components: {IconRotate, IconArrowNarrowLeft, IconArrowNarrowRight, IconSquareChecked, IconSquare},
   computed: mapState({
     selectedSections: state => state.builder.selected,
-    totalPrice: state => state.tPrice
+    totalPrice: state => state.builder.totalPrice
   }),
   methods: {
     ...mapActions(['resetSelection'])
